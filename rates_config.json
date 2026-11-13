@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "calibratedAt": "2026-11-06T00:00:00Z",
+  "calibratedMonthLabel": "Nov/2026",
+  "legalReference": "Decreto 12.499/2025 (vigente via liminar STF) e Res. BCB 277/2022 (VET)",
+  "iofTable": {
+    "inboundToBRL": {
+      "ratePercent": 0.38,
+      "description": "Entrada de recursos no Brasil (embutido na cotação líquida das plataformas de remessa)"
+    },
+    "outboundFromBRL": {
+      "investmentOrSameHolderPercent": 1.10,
+      "generalServicesOrThirdPartyPercent": 3.50,
+      "internationalCardPercent": 3.50,
+      "foreignCashPercent": 3.50,
+      "description": "Saída de recursos do Brasil sem cronograma de redução automática vigente"
+    }
+  },
+  "currencies": {
+    "USD": {
+      "supportsPTAX": true,
+      "officialReference": "BCB_PTAX",
+      "displayLotSize": 1,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Câmbio comercial spot interbancário sem tarifas ou impostos."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 2.68,
+          "variableFeePercent": 0.84,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "derived",
+          "notes": "Padrão fintech transparente (ex.: modelo Wise USD->BRL lido em 05-06/11/2026: US$ 2,68 fixo + 0,84% sobre comercial, IOF 0,38% incluso)."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.99,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 1.70,
+          "inboundIOFIncluded": true,
+          "source": "derived",
+          "notes": "Padrão remessa tradicional (ex.: modelo WU USD->BRL varia de 1,03% a 2,40% conforme subcanal; calibrado no ponto médio conservador de 1,70% + US$ 0,99)."
+        },
+        "credit_card": {
+          "baseRateType": "PTAX_SALE",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Média de cartões bancários brasileiros: PTAX Venda + 4,0% de spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 5.50,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Dólar turismo em espécie no Brasil: ponto médio da faixa observada (3% a 8% sobre comercial = 5,5%) + 3,5% IOF."
+        }
+      }
+    },
+    "CAD": {
+      "supportsPTAX": true,
+      "officialReference": "BCB_PTAX",
+      "displayLotSize": 1,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Câmbio comercial spot CAD/BRL."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 1.77,
+          "variableFeePercent": 1.01,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "derived",
+          "notes": "Padrão fintech transparente (ex.: modelo Wise CAD->BRL lido em 05-06/11/2026: CA$ 1,77 fixo + 1,01% sobre comercial, IOF 0,38% incluso)."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 1.99,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 3.31,
+          "inboundIOFIncluded": true,
+          "source": "derived",
+          "notes": "Padrão remessa tradicional (ex.: modelo WU CAD->BRL banco->banco: spread de 3,31% abaixo da comercial + CA$ 1,99 fixo)."
+        },
+        "credit_card": {
+          "baseRateType": "PTAX_SALE",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Cartão internacional: PTAX Venda + 4,0% spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 5.80,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Espécie/Turismo CAD: ~5,8% por lado (metade do spread total de 11,6% observado para BRL exótico em Vancouver / ponto médio casas de câmbio)."
+        }
+      }
+    },
+    "EUR": {
+      "supportsPTAX": true,
+      "officialReference": "BCB_PTAX",
+      "displayLotSize": 1,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Câmbio comercial spot EUR/BRL."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 2.10,
+          "variableFeePercent": 0.88,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado da estrutura SEPA/Fintech proporcional ao par USD/CAD."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 1.90,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 2.20,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado da estrutura de markup tradicional entre USD e CAD."
+        },
+        "credit_card": {
+          "baseRateType": "PTAX_SALE",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Cartão internacional: PTAX Venda + 4,0% spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 5.50,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Euro turismo em espécie no Brasil: ponto médio (5,5% sobre comercial) + 3,5% IOF."
+        }
+      }
+    },
+    "GBP": {
+      "supportsPTAX": true,
+      "officialReference": "BCB_PTAX",
+      "displayLotSize": 1,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Câmbio comercial spot GBP/BRL."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 1.85,
+          "variableFeePercent": 0.85,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado da estrutura Faster Payments/Fintech proporcional a USD."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 1.99,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 2.30,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado do modelo tradicional."
+        },
+        "credit_card": {
+          "baseRateType": "PTAX_SALE",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Cartão internacional: PTAX Venda + 4,0% spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 6.00,
+          "inboundIOFIncluded": false,
+          "source": "extrapolated",
+          "notes": "Libra em espécie: spread médio de casa de câmbio + IOF."
+        }
+      }
+    },
+    "AUD": {
+      "supportsPTAX": true,
+      "officialReference": "BCB_PTAX",
+      "displayLotSize": 1,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Câmbio comercial spot AUD/BRL."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 1.95,
+          "variableFeePercent": 1.01,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado a partir da estrutura de dólar de commodity (CAD)."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 2.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 3.30,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado a partir da estrutura CAD."
+        },
+        "credit_card": {
+          "baseRateType": "PTAX_SALE",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Cartão internacional: PTAX Venda + 4,0% spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 6.50,
+          "inboundIOFIncluded": false,
+          "source": "extrapolated",
+          "notes": "Espécie AUD: spread mais amplo por menor liquidez física."
+        }
+      }
+    },
+    "JPY": {
+      "supportsPTAX": true,
+      "officialReference": "BCB_PTAX",
+      "displayLotSize": 100,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Câmbio comercial spot JPY/BRL (exibido em lote de 100 JPY)."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 100.00,
+          "variableFeePercent": 0.95,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado para JPY respeitando o teto de clamp de 100 unidades na tarifa fixa + 0,95%."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 100.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 2.80,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado para JPY tradicional."
+        },
+        "credit_card": {
+          "baseRateType": "PTAX_SALE",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Cartão internacional: PTAX Venda + 4,0% spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 6.50,
+          "inboundIOFIncluded": false,
+          "source": "extrapolated",
+          "notes": "Espécie JPY em casas de câmbio."
+        }
+      }
+    },
+    "CHF": {
+      "supportsPTAX": true,
+      "officialReference": "BCB_PTAX",
+      "displayLotSize": 1,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Câmbio comercial spot CHF/BRL."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 2.20,
+          "variableFeePercent": 0.90,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado da estrutura europeia USD/EUR."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 2.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 2.50,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado do modelo tradicional."
+        },
+        "credit_card": {
+          "baseRateType": "PTAX_SALE",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "derived",
+          "notes": "Cartão internacional: PTAX Venda + 4,0% spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 6.00,
+          "inboundIOFIncluded": false,
+          "source": "extrapolated",
+          "notes": "Franco suíço em espécie."
+        }
+      }
+    },
+    "AED": {
+      "supportsPTAX": false,
+      "officialReference": "NONE_USE_COMMERCIAL_FALLBACK",
+      "displayLotSize": 1,
+      "profiles": {
+        "commercial_pure": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "official",
+          "notes": "Dirham dos Emirados pareado ao USD; BCB não publica boletim PTAX para AED."
+        },
+        "remittance_digital": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 9.85,
+          "variableFeePercent": 1.15,
+          "spreadPercent": 0.00,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado da paridade fixa USD/AED (1 USD = 3,6725 AED)."
+        },
+        "remittance_traditional": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 10.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 2.80,
+          "inboundIOFIncluded": true,
+          "source": "extrapolated",
+          "notes": "Extrapolado para remessa tradicional em AED."
+        },
+        "credit_card": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 4.00,
+          "inboundIOFIncluded": false,
+          "source": "extrapolated",
+          "notes": "Como não há PTAX para AED no BCB, usa Comercial Spot como proxy base + 4,0% spread + 3,5% IOF."
+        },
+        "cash_exchange": {
+          "baseRateType": "COMMERCIAL_SPOT",
+          "fixedFeeForeign": 0.00,
+          "variableFeePercent": 0.00,
+          "spreadPercent": 7.50,
+          "inboundIOFIncluded": false,
+          "source": "extrapolated",
+          "notes": "Moeda exótica em espécie no Brasil."
+        }
+      }
+    }
+  }
+}
