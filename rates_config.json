@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "calibratedAt": "2026-11-06T00:00:00Z",
+  "calibratedAt": "2026-11-16T00:00:00Z",
   "calibratedMonthLabel": "Nov/2026",
   "legalReference": "Decreto 12.499/2025 (vigente via liminar STF) e Res. BCB 277/2022 (VET)",
   "iofTable": {
@@ -44,10 +44,10 @@
           "baseRateType": "COMMERCIAL_SPOT",
           "fixedFeeForeign": 0.99,
           "variableFeePercent": 0.00,
-          "spreadPercent": 1.70,
+          "spreadPercent": 2.80,
           "inboundIOFIncluded": true,
           "source": "derived",
-          "notes": "Padrão remessa tradicional (ex.: modelo WU USD->BRL varia de 1,03% a 2,40% conforme subcanal; calibrado no ponto médio conservador de 1,70% + US$ 0,99)."
+          "notes": "Padrão remessa tradicional (ex.: modelo WU USD->BRL medido 14/11 e 16/11/2026: spread 2,52-2,83% em 2 fontes; recalibrado pra 2,8% + US$ 0,99 em 2026-11-16)."
         },
         "credit_card": {
           "baseRateType": "PTAX_SALE",
@@ -189,12 +189,12 @@
         },
         "remittance_digital": {
           "baseRateType": "COMMERCIAL_SPOT",
-          "fixedFeeForeign": 1.85,
-          "variableFeePercent": 0.85,
+          "fixedFeeForeign": 0.42,
+          "variableFeePercent": 0.90,
           "spreadPercent": 0.00,
           "inboundIOFIncluded": true,
-          "source": "extrapolated",
-          "notes": "Extrapolado da estrutura Faster Payments/Fintech proporcional a USD."
+          "source": "derived",
+          "notes": "Padrão fintech transparente (ex.: modelo Wise GBP->BRL medido 15/11/2026: £0,42 fixo + 0,90% sobre comercial, IOF 0,38% incluso)."
         },
         "remittance_traditional": {
           "baseRateType": "COMMERCIAL_SPOT",
@@ -241,12 +241,12 @@
         },
         "remittance_digital": {
           "baseRateType": "COMMERCIAL_SPOT",
-          "fixedFeeForeign": 1.95,
-          "variableFeePercent": 1.01,
+          "fixedFeeForeign": 0.66,
+          "variableFeePercent": 0.88,
           "spreadPercent": 0.00,
           "inboundIOFIncluded": true,
-          "source": "extrapolated",
-          "notes": "Extrapolado a partir da estrutura de dólar de commodity (CAD)."
+          "source": "derived",
+          "notes": "Padrão fintech transparente (ex.: modelo Wise AUD->BRL medido 15/11/2026: A$0,66 fixo + 0,88% sobre comercial, IOF 0,38% incluso)."
         },
         "remittance_traditional": {
           "baseRateType": "COMMERCIAL_SPOT",
